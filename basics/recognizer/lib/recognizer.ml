@@ -25,7 +25,7 @@ let rec lang5 l5 =  match l5 with
   |'0'::'0'::tl -> lang5 tl
   |'1'::'1'::tl -> lang5 tl
   |_ -> false;;
-
+                            
     
 let recognizers = [lang1;lang2;lang3;lang4;lang5]
                   
