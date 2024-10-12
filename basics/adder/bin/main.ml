@@ -9,7 +9,8 @@ let read_line () =
 (* convert a string of space-separated integers to a list of integers *)
     
 let intlist_of_string s =
-  List.map int_of_string (String.split_on_char ' ' s)
+  List.map int_of_string (List.filter (fun x -> x <> "") (String.split_on_char ' ' s))
+
 
 (* read one line from stdin, converts to a list of integers, and prints their sum *)
     
