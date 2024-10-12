@@ -2,4 +2,4 @@
  (name addertest)
  (inline_tests) 
  (preprocess (pps ppx_inline_test))
- (libraries adder))
+ (libraries adder ppx_inline_test))
