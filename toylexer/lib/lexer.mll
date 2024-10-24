@@ -11,7 +11,7 @@ let uppercase = ['A'-'Z']['a'-'z' '0'-'9']*
 let vowel = ['a' 'e' 'i' 'o' 'u']
 let lwrvowel = vowel+
 let onevowel = chr* vowel chr*
-let real_num = ['-']? ['.']? num+ ['.']? num*
+let real_num = ['-' '.']+ num+ ['.']? num*
 
 rule read_token =
   parse
@@ -20,7 +20,7 @@ rule read_token =
   | ")" { RPAREN }
   | "=" { ASSIGN }
   | "+" { PLUS }
-  | ";" { SEQ }  
+  | ";" { SEQ } 
   | uppercase { ATOK }
   | lwrvowel { BTOK }
   | real_num { DTOK }

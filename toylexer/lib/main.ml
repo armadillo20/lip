@@ -25,15 +25,18 @@ let string_of_frequencies fl =
 
 (* frequency : int -> 'a list -> ('a * int) list *)
     
+    
 let rec firstn n l = match n,l with 
-   _,[]-> failwith("not enough elements bro")
+    _,[]-> failwith("not enough elements bro")
   |0,_-> []
   |_,a::tl -> [a]@firstn (n-1) tl 
-
+      
+      
+      
+      
 let frequency n lt = List.map(fun (a,b) -> (b,a)) (firstn n (
     List.rev( List.sort_uniq compare
                 (List.map (fun x ->
                      ( List.fold_left (fun aux y -> if x = y then 1 + aux else aux) 0 lt)
                    ,x) lt))))
 ;;
-
