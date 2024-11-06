@@ -7,6 +7,8 @@ type token =
   | ATOK 
   | BTOK
   | DTOK
+  | CTOK
+  | ETOK
   | ID of string
   | CONST of string
   | EOF
@@ -19,7 +21,9 @@ let string_of_token = function
   | SEQ -> "SEQ"
   | ATOK -> "ATOK"
   | BTOK -> "BTOK"
+  | CTOK -> "CTOK"
   | DTOK -> "DTOK"
+  | ETOK -> "ETOK"
   | ID(s) -> "ID(" ^ s ^ ")"
   | CONST(s) -> "CONST(" ^ s ^ ")"
   | EOF -> "EOF"

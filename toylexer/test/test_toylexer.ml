@@ -23,8 +23,11 @@ let%test "test_frequencies_5" =
 
 
   let%test "test_frequencies_6" =
-lexer "x=1; y=x+1 ; x =1   " |> frequency 1 = [(CONST"1",3)]
-
+lexer "a e i o u " |> frequency 1 = [(BTOK,5)]
 
 let%test "test_frequencies_7" =
-lexer "Lesgo" |> frequency 1 = [(ATOK,1)]
+lexer "asd efg" |> frequency 1 = [(CTOK,2)]
+
+let%test "test_frequencies_8" =
+  lexer "0x1A 0x1A 0x1A" |> frequency 1 = [(ETOK, 3)]
+
