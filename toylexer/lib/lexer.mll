@@ -15,7 +15,7 @@ let real_num = ['-' '.']+ num+ ['.']? num*
 let hex_prefix = ['0'] ['x' 'X']
 let hex_digit = ['0'-'9' 'A'-'F' 'a'-'f']
 
-rule read_token =
+rule read_token = 
   parse
   | white { read_token lexbuf }  
   | "(" { LPAREN }

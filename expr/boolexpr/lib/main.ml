@@ -17,8 +17,8 @@ let parse (s : string) : boolExpr =
 exception NoRuleApplies
 
 let rec trace1 = function
-    | If(True, e1, e2) -> e1                     (* [S-IfTrue] *)
-    | If(False, e1, e2) -> e2                    (* [S-IfFalse] *)
+    | If(True, e1, _) -> e1                     (* [S-IfTrue] *)
+    | If(False, _, e2) -> e2                    (* [S-IfFalse] *)
     | If(e0, e1, e2) ->                           (* [S-If] *)
         let e0' = trace1 e0 in
         If(e0', e1, e2)
@@ -34,5 +34,5 @@ let rec trace e = try
   | True -> true
   | False -> false
   | If(cond, e1, e2) -> 
-      if eval cond then eval e1  (* [B-IfTrue] *)
-      else eval e2               (* [B-IfFalse] *)
+      if eval cond then eval e1  
+      else eval e2               
