@@ -5,6 +5,7 @@ open QCheck
 
 (* ### Properties ### *)
 
+
 let rec is_nv : expr -> bool = function
   | Zero -> true
   | Succ e -> is_nv e

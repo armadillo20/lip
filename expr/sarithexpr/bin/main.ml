@@ -1,4 +1,10 @@
+
 open SarithexprLib.Main
+
+
+
+
+
   
 (* read file, and output it to a string *)
 
@@ -14,6 +20,18 @@ let read_line () =
   try Some(read_line())
   with End_of_file -> None
 ;;
+
+
+(*string of val*)
+let string_of_val = function 
+ |Bool b -> string_of_bool(b) 
+ |Nat n-> string_of_int(n)
+
+
+
+
+
+
 
 (* print a result *)
 

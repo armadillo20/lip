@@ -9,3 +9,8 @@ type expr =
   | Succ of expr
   | Pred of expr
   | IsZero of expr
+
+  let rec is_nv = function
+  | Zero -> true
+  | Succ(nv) -> is_nv nv
+  | _ -> false
